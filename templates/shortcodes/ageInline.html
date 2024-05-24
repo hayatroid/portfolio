@@ -1,0 +1,17 @@
+<span class="age-inline"><span id="ageYear"></span><span class="small" id="ageFraction"></span></span>
+
+{# https://day.js.org/docs/en/installation/browser #}
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script>
+  const ageYear = document.getElementById('ageYear');
+  const ageFraction = document.getElementById('ageFraction');
+
+  const birthday = dayjs('2004-12-20');
+  const [x, y] = dayjs().diff(birthday, 'y', true).toFixed(9).split('.');
+  ageYear.innerText = x + '.';
+  ageFraction.innerText = y;
+  setInterval(() => {
+    const [x, y] = dayjs().diff(birthday, 'y', true).toFixed(9).split('.');
+    ageFraction.innerText = y;
+  });
+</script>

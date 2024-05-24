@@ -1,0 +1,55 @@
+{% if page %}
+  {% set section = get_section(path=page.ancestors | last) %}
+{% endif %}
+
+{# for 404.html #}
+{% if not page and not section %}
+  {% set section = get_section(path="_index.md") %}
+{% endif %}
+
+{% set home = get_section(path="_index.md") %}
+
+<header class="header">
+  <div class="header-container">
+    <nav class="breadcrumb">
+      <ul>
+        <li>
+          <a href="{{ home.permalink }}">{{ home.title }}</a>
+        </li>
+        {% if section != home %}
+          <span class="separator">/</span>
+          <li>
+            <a href="{{ section.permalink }}">{{ section.components | last }}</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div class="dropdown">
+      <button id="dropdown-btn">
+        <div class="down material-symbols-outlined">keyboard_arrow_down</div>
+        <div class="up material-symbols-outlined">keyboard_arrow_up</div>
+      </button>
+      <ul id="dropdown-menu">
+        <li>
+          <a class="{% if section == home %}{{ "selected" }}{% endif %}" href="{{ home.permalink }}">
+            <span class="title">{{ home.extra.title_breadcrumb }}</span>
+            {% if section == home %}
+              <div class="here material-symbols-outlined">check</div>
+            {% endif %}
+          </a>
+        </li>
+        {% for home_sub in home.subsections %}
+          {% set home_sub = get_section(path=home_sub) %}
+          <li>
+            <a class="{% if section == home_sub %}{{ "selected" }}{% endif %}" href="{{ home_sub.permalink }}">
+              <span class="title">{{ home_sub.extra.title_breadcrumb }}</span>
+              {% if section == home_sub %}
+                <div class="here material-symbols-outlined">check</div>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</header>

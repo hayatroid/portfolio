@@ -1,0 +1,48 @@
+<form class="strcount" onsubmit="count(this, this.txt.value); return false">
+  <div class="input">
+    <textarea name="txt"></textarea>
+  </div>
+  <div class="button-groups">
+    <input type="submit" value="字数を数える" />
+    <input type="reset" value="リセット" />
+  </div>
+  <div class="output-groups">
+    <label for="s">文字数 (スペース込み)</label>
+    <input value="0" id="s" name="s" readonly />
+
+    <label for="l">文字数 (スペース無視)</label>
+    <input value="0" id="l" name="l" readonly />
+
+    <label for="r">行数</label>
+    <input value="0" id="r" name="r" readonly />
+
+    <label for="p">段落数</label>
+    <input value="0" id="p" name="p" readonly />
+
+    <label for="m">原稿用紙換算 (400 x ? 枚)</label>
+    <input value="0" id="m" name="m" readonly />
+  </div>
+</form>
+
+<script>
+  const count = (elm, txt) => {
+    if (txt === '') {
+      return;
+    }
+
+    const s = [...new Intl.Segmenter('ja', { granularity: 'grapheme' }).segment(txt.replace(/\n/g, ''))].length;
+    elm.s.value = s;
+
+    const l = [...new Intl.Segmenter('ja', { granularity: 'grapheme' }).segment(txt.replace(/\s|　/g, ''))].length;
+    elm.l.value = l;
+
+    const r = (txt.match(/\n/g)?.length ?? 0) + 1;
+    elm.r.value = r;
+
+    const p = (txt.match(/\n(?:　|\s+|「|『|＜|《|〈|≪|（|“|‘|\(|\"|\')./g)?.length ?? 0) + 1;
+    elm.p.value = p;
+
+    const m = Math.ceil(s / 400);
+    elm.m.value = m;
+  };
+</script>

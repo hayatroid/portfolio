@@ -1,0 +1,21 @@
+{% set notes = get_section(path="notes/_index.md") %}
+
+{% if page %}
+  {% set section = get_section(path=page.ancestors | last) %}
+  <header class="article-header">
+    <p class="thumbnail">{{ page.extra.emoji }}</p>
+    <h1 class="title">{{ page.title }}</h1>
+    {% if section == notes %}
+      {% set about = get_section(path="about/_index.md") %}
+      <p class="info">
+        <span>🗓️ <time>{{ page.date }}</time></span>
+        <span>✍ <a href="{{ about.permalink }}">{{ config.author }}</a></span>
+      </p>
+    {% endif %}
+  </header>
+{% else %}
+  <header class="article-header">
+    <p class="thumbnail">{{ section.extra.emoji }}</p>
+    <h1 class="title">{{ section.title }}</h1>
+  </header>
+{% endif %}

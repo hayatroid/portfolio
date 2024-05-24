@@ -1,0 +1,48 @@
+<form class="modinv" onsubmit="modinv(this, this.base.value); return false">
+  <div class="input">
+    <input type="number" name="base" value="1" />
+    <input type="submit" value="計算" />
+  </div>
+  <div class="output-groups">
+    <label for="out998">逆数$\pmod{998244353}$</label>
+    <input value="1" id="out998" name="out998" readonly />
+    <label for="out100">逆数$\pmod{1000000007}$</label>
+    <input value="1" id="out100" name="out100" readonly />
+  </div>
+</form>
+
+<script>
+  const modinv = (elm, base) => {
+    try {
+      base = BigInt(base);
+      const mod998 = BigInt(998244353);
+      const mod100 = BigInt(1000000007);
+      elm.out998.value = modinvInner(base, mod998);
+      elm.out100.value = modinvInner(base, mod100);
+    } catch (e) {
+      elm.out998.value = 'Oops!';
+      elm.out100.value = 'Oops!';
+      return;
+    }
+  };
+
+  const modinvInner = (base, mod) => {
+    base = base % mod;
+    if (base < BigInt(0)) {
+      base += mod;
+    }
+    if (base === BigInt(0)) {
+      return 'Oops!';
+    }
+    let exp = mod - BigInt(2);
+    let res = BigInt(1);
+    while (exp > BigInt(0)) {
+      if (exp & BigInt(1)) {
+        res = (res * base) % mod;
+      }
+      base = (base * base) % mod;
+      exp >>= BigInt(1);
+    }
+    return res;
+  };
+</script>

@@ -1,0 +1,71 @@
+/* --------------------------------
+margin
+-------------------------------- */
+$margin-block: 2rem 0;
+$margin-h2: 3rem 0 -1rem 0;
+$margin-h3: 3rem 0 -1rem 0;
+
+$margin-footnote-def-p: 0 5px;
+
+/* --------------------------------
+padding
+-------------------------------- */
+$padding-code-block: 0.875rem 0.75rem;
+$padding-code-inline: 0 5px;
+
+$padding-footnote-ref: 0 2px;
+
+$padding-table: 0 1rem;
+
+$padding-notes-year-top: 0.75rem;
+$padding-notes-item: 1rem .5rem;
+
+/* --------------------------------
+border
+-------------------------------- */
+$border-radius-base: 5px;
+$border-radius-in-section-groups: 1rem;
+$border-radius-in-tool-groups: 1rem;
+
+/* --------------------------------
+font-family
+-------------------------------- */
+$font-base: Inter, Helvetica Neue, Arial, Hiragino Kaku Gothic ProN,Hiragino Sans, Meiryo, sans-serif;
+$font-monospace: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+
+/* --------------------------------
+size
+-------------------------------- */
+$size-container: 620px;
+
+$size-text-base: 1.125rem;
+$size-text-h1: 2rem;
+$size-text-h2: 1.75rem;
+$size-text-h3: 1.25rem;
+$size-text-code: 1rem;
+$size-text-quote: 1rem;
+$size-text-footnote: 1rem;
+
+$size-text-lh-base: 2.25rem;
+$size-text-lh-h1: 2.5rem;
+$size-text-lh-h2: 2.25rem;
+$size-text-lh-h3: 2.25rem;
+$size-text-lh-code-block: 1.25;
+$size-text-lh-code-inline: 1.5;
+$size-text-lh-footnote: 1.5;
+$size-text-lh-in-note-groups: 1.5;
+
+$size-text-notes-year: 1.75rem;
+
+$size-thumbnail: 6rem;
+$size-thumbnail-in-note-groups: 1.75rem;
+$size-thumbnail-in-section-groups: 6rem;
+$size-thumbnail-in-tool-groups: 4rem;
+
+/* --------------------------------
+color
+-------------------------------- */
+$color-bg-quote: #f5f8fa;
+
+$color-text-base: #08131a;
+$color-text-link: #007cbc;

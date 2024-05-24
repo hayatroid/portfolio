@@ -1,0 +1,39 @@
+@use '../variables' as var;
+
+.article-header {
+  text-align: center;
+
+  .thumbnail {
+    // fallback for failed emoji SVG icon loading
+    font-size: var.$size-thumbnail;
+    line-height: 1;
+
+    img.emoji {
+      width: var.$size-thumbnail;
+      margin: 0;
+      vertical-align: bottom;
+    }
+  }
+
+  .title {
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    span {
+      line-height: 1;
+    }
+  }
+}
+
+.article-content {
+  & > :first-child {
+    margin-top: 2rem;
+  }
+}

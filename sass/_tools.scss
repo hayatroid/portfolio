@@ -1,0 +1,58 @@
+@use 'variables' as var;
+
+.tool-groups {
+  .tools {
+    display: grid;
+
+    @media screen and (width < 360px) {
+      grid-template-columns: 1fr;
+    }
+    @media screen and (360px <= width < var.$size-container) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (var.$size-container <= width) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+
+    .tool-item {
+      a {
+        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        border: 1px solid rgba(var.$color-text-base, 0.1);
+        border-radius: var.$border-radius-in-tool-groups;
+        transition: 0.1s;
+
+        &:hover {
+          transform: scale(105%);
+        }
+
+        height: 10rem;
+        padding: 1.5rem;
+
+        display: grid;
+        place-content: center;
+        place-items: center;
+        gap: .5rem;
+
+        .thumbnail {
+          // fallback for failed emoji SVG icon loading
+          font-size: var.$size-thumbnail-in-tool-groups;
+          line-height: 1;
+
+          img.emoji {
+            width: var.$size-thumbnail-in-tool-groups;
+            margin: 0;
+            vertical-align: bottom;
+          }
+        }
+
+        .title {
+          color: var.$color-text-base;
+        }
+      }
+    }
+  }
+}

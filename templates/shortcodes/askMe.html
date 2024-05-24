@@ -1,0 +1,6 @@
+<a id="askMe" href="">{{ config.author }} に圧力を掛ける</a>
+
+<script>
+  const askMe = document.getElementById('askMe');
+  askMe.href = `https://x.com/intent/post?text=@{{ config.extra.author_twitter }} ${location.href} を見せろ！`;
+</script>

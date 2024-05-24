@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{{ get_url(path="favicon.ico") }}" />
+    <link rel="icon" href="{{ get_url(path="icon.svg") }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ get_url(path="apple-touch-icon.png") }}" />
+    {% include "base/ogp.html" %}
+    {% include "cdn/destyle.html" %}
+    {% include "cdn/icons.html" %}
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}"/>
+  </head>
+
+  <body>
+    {% include "base/header.html" %}
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+    {% include "base/footer.html" %}
+    <script src="{{ get_url(path="toggle-button.js") }}"></script>
+    <script src="{{ get_url(path="footnote-backlink.js") }}"></script>
+    {% include "cdn/emoji.html" %}
+    {% include "cdn/katex.html" %}
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{% set home = get_section(path="_index.md") %}
+
+{% if section %}
+  {% if section == home %}
+    <title>{{ home.title }}</title>
+    <meta name="description" content="{{ home.description }}">
+
+    <meta property="og:site_name" content="{{ home.title }}">
+    <meta property="og:url" content="{{ home.permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ home.title }}">
+    <meta property="og:description" content="{{ home.description }}">
+    <meta property="og:image" content="{{ get_url(path="ogp.png") }}">
+    <meta property="og:locale" content="ja_JP">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{ home.description }}">
+    <meta name="twitter:image:src" content="{{ get_url(path="ogp.png") }}">
+  {% else %}
+    <title>{{ section.title }} | {{ home.title }}</title>
+    <meta name="description" content="{{ section.description }}">
+
+    <meta property="og:site_name" content="{{ home.title }}">
+    <meta property="og:url" content="{{ section.permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ section.title }} | {{ home.title }}">
+    <meta property="og:description" content="{{ section.description }}">
+    <meta property="og:image" content="{{ get_url(path="ogp.png") }}">
+    <meta property="og:locale" content="ja_JP">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{ section.description }}">
+    <meta name="twitter:image:src" content="{{ get_url(path="ogp.png") }}">
+  {% endif %}
+{% else %}
+  {% if not page %}
+    {% set page = get_page(path="404.md") %}
+  {% endif %}
+  <title>{{ page.title }} | {{ home.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+
+  <meta property="og:site_name" content="{{ home.title }}">
+  <meta property="og:url" content="{{ page.permalink }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title }} | {{ home.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="{{ get_url(path="ogp.png") }}">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image:src" content="{{ get_url(path="ogp.png") }}">
+{% endif %}
