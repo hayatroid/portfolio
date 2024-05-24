@@ -1,0 +1,32 @@
+<form class="encrypt" onsubmit="encrypt(this.enc.value); return false">
+  <div class="input">
+    <input id="enc" type="text" name="enc" />
+    <input type="submit" value="暗号化" />
+  </div>
+</form>
+
+<form class="decrypt" onsubmit="decrypt(this.dec.value); return false">
+  <div class="input">
+    <input id="dec" type="text" name="dec" />
+    <input type="submit" value="復号化" />
+  </div>
+</form>
+
+<script>
+  const enc = document.getElementById('enc');
+  const dec = document.getElementById('dec');
+
+  const encrypt = (txt) => {
+    const res = btoa(unescape(encodeURIComponent(txt)));
+    dec.value = res;
+  };
+
+  const decrypt = (txt) => {
+    try {
+      const res = decodeURIComponent(escape(atob(txt)));
+      enc.value = res;
+    } catch (e) {
+      enc.value = 'Oops!';
+    }
+  };
+</script>

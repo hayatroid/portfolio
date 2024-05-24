@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{% if section %}
+<article class="container">
+  {% include "base/article/header.html" %}
+  <hr>
+  <div class="article-content">
+    {{ section.content | safe }}
+  </div>
+</article>
+{% else %}
+<article class="container">
+  {% include "base/article/header.html" %}
+  <hr>
+  <div class="article-content">
+    {{ page.content | safe }}
+  </div>
+</article>
+{% endif %}
+{% endblock content %}

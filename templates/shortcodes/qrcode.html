@@ -1,0 +1,28 @@
+<form class="qrcode" onsubmit="genQR(this.txt.value); return false">
+  <div class="input">
+    <input type="text" name="txt" />
+    <input type="submit" value="生成" />
+  </div>
+  <div class="output" id="qrcode"></div>
+</form>
+
+{# https://davidshimjs.github.io/qrcodejs/ #}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+  integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script>
+  const qrcode = new QRCode('qrcode');
+  qrcode.makeCode('');
+
+  const genQR = (txt) => {
+    try {
+      qrcode.makeCode(txt);
+    } catch (e) {
+      document.getElementById('qrcode').textContent = 'Oops!'
+    }
+  };
+</script>

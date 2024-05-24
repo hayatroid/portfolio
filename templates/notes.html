@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>{{ section.title }}</h1>
+  <div class="note-groups-container">
+    {% for year, pages in section.pages | group_by(attribute="year") %}
+    <div class="note-groups">
+      <span class="year">{{ year }}</span>
+      <ul class="notes">
+        {% for page in pages %}
+        <li>
+          <a href="{{ page.permalink }}">
+            <span class="thumbnail">{{ page.extra.emoji }}</span>
+            <span class="title">{{ page.title }}</span>
+            <span class="date">{{ page.date | date(format="%m/%d") }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+{% set notes = get_section(path="notes/_index.md") %}
+{% set tools = get_section(path="tools/_index.md") %}
+{% set about = get_section(path="about/_index.md") %}
+<div class="container">
+  <div class="card-author">
+    <div class="thumbnail">{{ config.extra.author_emoji }}</div>
+    <div class="info">
+      <h1 class="title">{{ config.author }}<span>（{{ config.extra.author_ja }}）</span></h1>
+      <p>{{ config.extra.author_bio }}<a href="{{ about.permalink }}">もっと読む</a></p>
+    </div>
+  </div>
+  
+  <div class="section-groups">
+    <ul class="sections">
+      <li class="section-item">
+        <a class="notes" href="{{ notes.permalink }}">
+          <span class="thumbnail">{{ notes.extra.emoji }}</span>
+          <span class="title">{{ notes.title }}</span>
+        </a>
+      </li>
+      <li class="section-item">
+        <a class="tools" href="{{ tools.permalink }}">
+          <span class="thumbnail">{{ tools.extra.emoji }}</span>
+          <span class="title">{{ tools.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock content %}

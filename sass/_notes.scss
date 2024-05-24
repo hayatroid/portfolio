@@ -1,0 +1,68 @@
+@use 'variables' as var;
+
+.note-groups-container {
+  margin: var.$margin-block;
+
+  .note-groups {
+    display: flex;
+
+    .year {
+      flex-shrink: 0;
+      font-size: var.$size-text-notes-year;
+      padding-top: var.$padding-notes-year-top;
+    }
+
+    &:last-child {
+      .notes {
+        li:last-child {
+          border: none;
+        }
+      }
+    }
+
+    .notes {
+      list-style: none;
+      width: 100%;
+      padding-left: 1.5rem;
+      margin: 0;
+
+      li {
+        line-height: var.$size-text-lh-in-note-groups;
+        border-bottom: 1px dashed rgba(var.$color-text-base, 0.5);
+
+        a {
+          display: flex;
+          gap: 1rem;
+          padding: var.$padding-notes-item;
+          border: none;
+          color: var.$color-text-base;
+          transition: 0.2s;
+
+          &:hover {
+            background: var.$color-bg-quote;
+          }
+
+          .thumbnail {
+            flex-shrink: 0;
+
+            // fallback for failed emoji SVG icon loading
+            font-size: var.$size-thumbnail-in-note-groups;
+            line-height: 1;
+
+            img.emoji {
+              width: var.$size-thumbnail-in-note-groups;
+              margin: 0;
+              vertical-align: bottom;
+            }
+          }
+
+          .date {
+            flex-shrink: 0;
+            margin-left: auto;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
