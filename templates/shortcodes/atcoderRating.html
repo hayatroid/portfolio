@@ -1,4 +1,5 @@
-{% set rating = load_data(path="static/atcoderRating.txt") | int %}
+{% set data = load_data(path="atcoder_info.json", format="json") %}
+{% set rating = data["rating"] %}
 {% if rating >= 2800 %}
   <span style="font-weight: bold; color: #FF0000">{{ rating }}</span>
 {% else %} {% if rating >= 2400 %}
