@@ -92,10 +92,11 @@ body {
 
       #dropdown-menu {
         position: absolute;
-        top: 2.25rem;
+        top: 2.75rem;
         left: -4.25rem;
         border: 1px solid rgba(var.$color-text-base, 0.1);
         border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
         width: 10rem;
         display: none;
         z-index: 998244353;
@@ -103,30 +104,33 @@ body {
         background: white;
 
         &.show {
-          display: flex;
-          flex-direction: column;
-          gap: .5rem;
-          padding: 1rem;
+          display: block;
         }
 
         li {
+          &:first-child a {
+            padding-top: 1rem;
+          }
+          &:last-child a {
+            padding-bottom: 1rem;
+          }
+          
           a {
             display: flex;
             align-items: center;
-            color: rgba(var.$color-text-base, 0.5);
-
-            transition: 0.2s;
-
-            &.selected {
-              color: var.$color-text-base;
+            padding: .5rem 1rem;
+            .here {
+              margin-left: auto;
             }
 
+            transition: 0.2s;
             &:hover {
               background: var.$color-bg-quote;
             }
 
-            .here {
-              margin-left: auto;
+            color: rgba(var.$color-text-base, 0.5);
+            &.selected {
+              color: var.$color-text-base;
             }
           }
         }
