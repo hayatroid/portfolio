@@ -17,15 +17,15 @@ title_breadcrumb = "About"
 
 ## Profile
 - 名前：hayatroid（はやとろいど）
-- 年齢：{{ ageInline() }}
+- 年齢：{{ age() }}
 - 所属：東京工業大学 情報理工学院 数理・計算科学系 学士 2 年
 - [東京工業大学デジタル創作同好会 traP](https://trap.jp/) のメンバーです。
 
 ## Skills
 - 💪 競技プログラミング
   - 基本的なアルゴリズムが一通り書けます。
-  - AtCoder の [Rating は {{ atcoderRating() }}](https://atcoder.jp/users/hayatroid) です。
-  - AtCoder の問題を今までに [Rust で {{ atcoderCountRust() }} 問、Python で {{ atcoderCountPython() }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
+  - AtCoder の [Rating は {{ atc_rating() }}](https://atcoder.jp/users/hayatroid) です。
+  - AtCoder の問題を今までに [Rust で {{ atc_cntrust() }} 問、Python で {{ atc_cntpy() }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
 - 🤏 Web フロントエンド
   - このサイトを作れる程度の能力があります（HTML / CSS）。
   - [Vue.js でちょっとしたサイトを作ったことがあります。](https://trap.jp/post/2171/)
