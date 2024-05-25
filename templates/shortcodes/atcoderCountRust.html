@@ -1,12 +1,3 @@
-<span id="atcoderCountRust"></span>
-
-<script>
-  const atcoderCountRust = document.getElementById('atcoderCountRust');
-  const urlCountRust = location.protocol + '//' + location.host + '/atcoderCountRust.txt';
-
-  fetch(urlCountRust)
-    .then((response) => response.text())
-    .then((count) => {
-      atcoderCountRust.innerText = count;
-    });
-</script>
+{% set data = load_data(path="atcoder_info.json", format="json") %}
+{% set count_rust = data["count_rust"] %}
+<span>{{ count_rust }}</span>

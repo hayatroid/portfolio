@@ -1,12 +1,3 @@
-<span id="atcoderCountPython"></span>
-
-<script>
-  const atcoderCountPython = document.getElementById('atcoderCountPython');
-  const urlCountPython = location.protocol + '//' + location.host + '/atcoderCountPython.txt';
-
-  fetch(urlCountPython)
-    .then((response) => response.text())
-    .then((count) => {
-      atcoderCountPython.innerText = count;
-    });
-</script>
+{% set data = load_data(path="atcoder_info.json", format="json") %}
+{% set count_python = data["count_python"] %}
+<span>{{ count_python }}</span>
