@@ -44,7 +44,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 
     .breadcrumb {
       ul {
@@ -71,12 +71,12 @@ body {
 
         .down {
           display: block;
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
 
         .up {
           display: none;
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
 
         &.show {
@@ -93,18 +93,20 @@ body {
       #dropdown-menu {
         position: absolute;
         top: 2.25rem;
-        left: -3.25rem;
+        left: -4.25rem;
         border: 1px solid rgba(var.$color-text-base, 0.1);
         border-radius: 5px;
-        width: 8rem;
+        width: 10rem;
         display: none;
         z-index: 998244353;
 
         background: white;
-        padding: 0.5rem;
 
         &.show {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+          padding: 1rem;
         }
 
         li {
@@ -113,7 +115,6 @@ body {
             align-items: center;
             color: rgba(var.$color-text-base, 0.5);
 
-            padding: 0 0.5rem;
             transition: 0.2s;
 
             &.selected {
