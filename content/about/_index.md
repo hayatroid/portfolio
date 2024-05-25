@@ -24,8 +24,8 @@ title_breadcrumb = "About"
 ## Skills
 - 💪 競技プログラミング
   - 基本的なアルゴリズムが一通り書けます。
-  - AtCoder の [Rating 最高値は <span style="font-weight: bold; color: #0000ff">1634</span>](https://atcoder.jp/users/hayatroid) です。
-  - AtCoder の問題を今までに [Rust で 585 問、Python で 231 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解きました（2024-05-24 現在）。
+  - AtCoder の [Rating は {{ atcoderRating() }}](https://atcoder.jp/users/hayatroid) です。
+  - AtCoder の問題を今までに [Rust で {{ atcoderCountRust() }} 問、Python で {{ atcoderCountPython() }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
 - 🤏 Web フロントエンド
   - このサイトを作れる程度の能力があります（HTML / CSS）。
   - [Vue.js でちょっとしたサイトを作ったことがあります。](https://trap.jp/post/2171/)
