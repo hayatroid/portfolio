@@ -103,30 +103,33 @@ body {
         background: white;
 
         &.show {
-          display: flex;
-          flex-direction: column;
-          gap: .5rem;
-          padding: 1rem;
+          display: block;
         }
 
         li {
+          &:first-child a {
+            padding-top: 1rem;
+          }
+          &:last-child a {
+            padding-bottom: 1rem;
+          }
+          
           a {
             display: flex;
             align-items: center;
-            color: rgba(var.$color-text-base, 0.5);
-
-            transition: 0.2s;
-
-            &.selected {
-              color: var.$color-text-base;
+            padding: .5rem 1rem;
+            .here {
+              margin-left: auto;
             }
 
+            transition: 0.2s;
             &:hover {
               background: var.$color-bg-quote;
             }
 
-            .here {
-              margin-left: auto;
+            color: rgba(var.$color-text-base, 0.5);
+            &.selected {
+              color: var.$color-text-base;
             }
           }
         }
