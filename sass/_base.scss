@@ -39,10 +39,12 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
 
-    height: 3rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    
+    font-size: 1.25rem;
 
     .breadcrumb {
       ul {
@@ -111,7 +113,6 @@ body {
             align-items: center;
             color: rgba(var.$color-text-base, 0.5);
 
-            font-size: 1rem;
             padding: 0 0.5rem;
             transition: 0.2s;
 
@@ -125,7 +126,6 @@ body {
 
             .here {
               margin-left: auto;
-              font-size: 1.25rem;
             }
           }
         }
@@ -311,7 +311,7 @@ body {
 .footer {
   margin-top: auto;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
 
   display: flex;
   align-items: center;
