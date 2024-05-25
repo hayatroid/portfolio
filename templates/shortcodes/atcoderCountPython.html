@@ -1,0 +1,12 @@
+<span id="atcoderCountPython"></span>
+
+<script>
+  const atcoderCountPython = document.getElementById('atcoderCountPython');
+  const urlCountPython = location.protocol + '//' + location.host + '/atcoderCountPython.txt';
+
+  fetch(urlCountPython)
+    .then((response) => response.text())
+    .then((count) => {
+      atcoderCountPython.innerText = count;
+    });
+</script>

@@ -1,0 +1,24 @@
+<span id="atcoderRating"></span>
+
+<script>
+  const atcoderRating = document.getElementById('atcoderRating');
+  const urlRating = location.protocol + '//' + location.host + '/atcoderRating.txt';
+
+  const colorCode = (rating) => {
+    if (rating >= 2800) return '#FF0000';
+    if (rating >= 2400) return '#FF8000';
+    if (rating >= 2000) return '#C0C000';
+    if (rating >= 1600) return '#0000FF';
+    if (rating >= 1200) return '#00C0C0';
+    if (rating >=  800) return '#008000';
+    if (rating >=  400) return '#804000';
+    if (rating >     0) return '#808080';
+    return '#000000';
+  };
+
+  fetch(urlRating)
+    .then((response) => response.text())
+    .then((rating) => {
+        atcoderRating.innerHTML = `<span style='font-weight: bold; color: ${colorCode(rating)};'>${rating}</span>`
+    });
+</script>
