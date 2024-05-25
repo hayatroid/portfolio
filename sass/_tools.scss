@@ -20,11 +20,11 @@
 
     .tool-item {
       a {
-        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
         border: 1px solid rgba(var.$color-text-base, 0.1);
         border-radius: var.$border-radius-in-tool-groups;
-        transition: 0.1s;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
+        transition: 0.1s;
         &:hover {
           transform: scale(105%);
         }
