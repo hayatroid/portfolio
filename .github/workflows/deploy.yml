@@ -20,7 +20,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install json
         pip install requests
     - name: Run atcoder_info.py
       run:
