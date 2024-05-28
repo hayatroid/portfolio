@@ -16,7 +16,7 @@
     flex-shrink: 0;
 
     // fallback for failed emoji SVG icon loading
-    font-size: var.$size-thumbnail-in-section-groups * 0.8;
+    font-size: var.$size-thumbnail-in-section-groups;
     line-height: 1;
 
     img.emoji {
