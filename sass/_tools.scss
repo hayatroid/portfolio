@@ -20,6 +20,7 @@
 
     .tool-item {
       a {
+        color: var.$color-text-base;
         border: 1px solid rgba(var.$color-text-base, 0.1);
         border-radius: var.$border-radius-in-tool-groups;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -58,10 +59,6 @@
             margin: 0;
             vertical-align: bottom;
           }
-        }
-
-        .title {
-          color: var.$color-text-base;
         }
       }
     }

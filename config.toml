@@ -8,7 +8,7 @@ minify_html = true
 [extra]
 author_ja = "はやとろいど"
 author_bio = "コンピュータを使った創作活動全般に興味があります。普段は競技プログラミングをしています。"
-author_emoji = "🤦"
+author_emoji = "🧑‍💻"
 author_twitter = "hayatroid"
 
 [markdown]
