@@ -17,13 +17,13 @@ emoji = "🤖"
 ## なぜその方法を選んだか
 他の方法として、アクセスのたびに API を叩くことも考えたのですが、サーバーへの負荷を考慮し、そこまでリアルタイム性が重要でないので 1 日 1 回の cron で十分だと判断しました。
 
-また、Zola の `load_data` 関数は直接 URL を指定できるので Zola だけで処理を完結させることも考えたのですが、目的のデータを取り出すのが大変だったので、データを整えてから Zola に渡すことにしました。
+また、Zola の `load_data` 関数は直接 URL を指定できるので Zola だけで処理を完結させることも考えたのですが、目的のデータを取り出すのが大変だったので、Python でデータを整えてから Zola に渡すことにしました。
 
 ## 実装方法
 
 ### まずは手元でテスト
 初めに以下の Python コードを書きました。
-AtCoder のレーティング、色、Rust で解いた問題数、Python で解いた問題数が取得できます。
+AtCoder のレーティング、色、Rust で解いた問題数、Python で解いた問題数を取得できます。
 
 ここでは [AtCoder の JSON](https://x.com/chokudai/status/1001332212648701952) と [AtCoder Problems API / Datasets](https://github.com/kenkoooo/AtCoderProblems/blob/master/doc/api.md) を使用させていただいてます（サーバーへの負荷を考慮し、間隔を空けて実行しなければならないことに注意が必要です）。
 
@@ -84,8 +84,8 @@ with open('atcoder_info.json', mode='w') as f:
 さらにこれを `templates/shortcodes/atc_rating.html` に保存すると、Markdown 内で `{{/* atc_rating() */}}` と記述するだけで呼び出すことができて便利です。例えば、こんな風に → {{ atc_rating() }}。
 
 ### GitHub Actions で自動化
-最後に Python コード実行 → json の更新 → Zola のビルドを GitHub Actions で定期実行させるようにしました。
-具体的には、以下のような yml ファイルを書きました。大まかな流れとしては、
+最後に Python コード実行 → json の更新 → Zola のビルドを GitHub Actions で定期実行させればおしまいです。
+以下のような yml ファイルを書きました。大まかな流れとしては、
 
 - `cron: '0 15 * * *'` で毎日 0 時に実行（日本時間は + 9 時間）。
 - Python をセットアップし、`requests` モジュールをインストール。
