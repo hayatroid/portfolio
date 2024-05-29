@@ -1,21 +1,4 @@
 {% set data = load_data(path="atcoder_info.json", format="json") %}
 {% set rating = data["rating"] %}
-{% if rating >= 2800 %}
-  <span style="font-weight: bold; color: #FF0000">{{ rating }}</span>
-{% else %} {% if rating >= 2400 %}
-  <span style="font-weight: bold; color: #FF8000">{{ rating }}</span>
-{% else %} {% if rating >= 2000 %}
-  <span style="font-weight: bold; color: #C0C000">{{ rating }}</span>
-{% else %} {% if rating >= 1600 %}
-  <span style="font-weight: bold; color: #0000FF">{{ rating }}</span>
-{% else %} {% if rating >= 1200 %}
-  <span style="font-weight: bold; color: #00C0C0">{{ rating }}</span>
-{% else %} {% if rating >=  800 %}
-  <span style="font-weight: bold; color: #008000">{{ rating }}</span>
-{% else %} {% if rating >=  400 %}
-  <span style="font-weight: bold; color: #804000">{{ rating }}</span>
-{% else %} {% if rating >     0 %}
-  <span style="font-weight: bold; color: #808080">{{ rating }}</span>
-{% else %}
-  <span style="font-weight: bold; color: #000000">{{ rating }}</span>
-{% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %}
+{% set color = data["color"] %}
+<span style="font-weight: bold; color: {{ color }}">{{ rating }}</span>
