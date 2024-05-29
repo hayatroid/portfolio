@@ -45,15 +45,8 @@
           .thumbnail {
             flex-shrink: 0;
 
-            // fallback for failed emoji SVG icon loading
             font-size: var.$size-thumbnail-in-note-groups;
             line-height: 1;
-
-            img.emoji {
-              width: var.$size-thumbnail-in-note-groups;
-              margin: 0;
-              vertical-align: bottom;
-            }
           }
 
           .date {

@@ -50,15 +50,8 @@
         gap: 0.5rem;
 
         .thumbnail {
-          // fallback for failed emoji SVG icon loading
           font-size: var.$size-thumbnail-in-tool-groups;
           line-height: 1;
-
-          img.emoji {
-            width: var.$size-thumbnail-in-tool-groups;
-            margin: 0;
-            vertical-align: bottom;
-          }
         }
       }
     }

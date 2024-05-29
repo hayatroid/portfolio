@@ -290,13 +290,6 @@ body {
     max-width: 100%;
   }
 
-  img.emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 0.05em 0 0.1em;
-    vertical-align: -0.1em;
-  }
-
   .footnote-reference {
     a {
       padding: var.$padding-footnote-ref;
@@ -332,4 +325,8 @@ body {
       color: var.$color-text-base;
     }
   }
+}
+
+.emoji {
+  font-family: 'Noto Color Emoji';
 }

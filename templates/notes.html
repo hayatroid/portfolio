@@ -11,7 +11,7 @@
         {% for page in pages %}
         <li>
           <a href="{{ page.permalink }}">
-            <span class="thumbnail">{{ page.extra.emoji }}</span>
+            <span class="thumbnail emoji">{{ page.extra.emoji }}</span>
             <span class="title">{{ page.title }}</span>
             <span class="date">{{ page.date | date(format="%m/%d") }}</span>
           </a>

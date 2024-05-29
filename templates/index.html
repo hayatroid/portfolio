@@ -6,7 +6,7 @@
 {% set about = get_section(path="about/_index.md") %}
 <div class="container">
   <div class="card-author">
-    <div class="thumbnail">{{ config.extra.author_emoji }}</div>
+    <div class="thumbnail emoji">{{ config.extra.author_emoji }}</div>
     <div class="info">
       <h1 class="title">{{ config.author }}<span>（{{ config.extra.author_ja }}）</span></h1>
       <p>{{ config.extra.author_bio }}<a href="{{ about.permalink }}">もっと読む</a></p>
@@ -17,13 +17,13 @@
     <ul class="sections">
       <li class="section-item">
         <a class="notes" href="{{ notes.permalink }}">
-          <span class="thumbnail">{{ notes.extra.emoji }}</span>
+          <span class="thumbnail emoji">{{ notes.extra.emoji }}</span>
           <span class="title">{{ notes.title }}</span>
         </a>
       </li>
       <li class="section-item">
         <a class="tools" href="{{ tools.permalink }}">
-          <span class="thumbnail">{{ tools.extra.emoji }}</span>
+          <span class="thumbnail emoji">{{ tools.extra.emoji }}</span>
           <span class="title">{{ tools.title }}</span>
         </a>
       </li>

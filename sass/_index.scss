@@ -15,15 +15,8 @@
   .thumbnail {
     flex-shrink: 0;
 
-    // fallback for failed emoji SVG icon loading
     font-size: var.$size-thumbnail-in-section-groups;
     line-height: 1;
-
-    img.emoji {
-      width: 100%;
-      margin: 0;
-      vertical-align: bottom;
-    }
   }
 
   .info {
@@ -93,15 +86,8 @@
         gap: 1.5rem;
 
         .thumbnail {
-          // fallback for failed emoji SVG icon loading
           font-size: var.$size-thumbnail-in-section-groups;
           line-height: 1;
-
-          img.emoji {
-            width: 100%;
-            margin: 0;
-            vertical-align: bottom;
-          }
         }
 
         .title {
