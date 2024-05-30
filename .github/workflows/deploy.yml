@@ -1,4 +1,4 @@
-name: Zola on GitHub Pages
+name: 🤖 deployment workflow
 on:
   schedule:
     - cron: '0 15 * * *'
@@ -43,7 +43,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
           if (git diff --cached --shortstat | grep '[0-9]'); then
-            git commit -m "[GitHub Actions] Update atcoder_info"
+            git commit -m "🤖 deployment workflow"
             git push origin HEAD:${GITHUB_REF}
           fi
 
