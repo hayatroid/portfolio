@@ -239,8 +239,6 @@ body {
 
   p, li {
     code {
-      line-height: 1.5;
-      display: inline-block;
       background: var.$color-bg-quote;
       border: 1px solid rgba(var.$color-text-base, 0.125);
       border-radius: var.$border-radius-base;
