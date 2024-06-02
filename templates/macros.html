@@ -1,0 +1,25 @@
+{% macro toc(page) %}
+{% if page.toc %}
+<nav class="toc">
+  <p class="title">目次</p>
+  <ul>
+    {% for h1 in page.toc %}
+    {% set h1_idx = loop.index %}
+    <li>
+      <a href="{{ h1.permalink | safe }}">{{ h1_idx }}. {{ h1.title }}</a>
+      {% if h1.children %}
+      <ul>
+        {% for h2 in h1.children %}
+        {% set h2_idx = loop.index %}
+        <li>
+          <a href="{{ h2.permalink | safe }}">{{ h1_idx }}-{{ h2_idx }}. {{ h2.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endmacro toc %}
