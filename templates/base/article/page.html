@@ -17,6 +17,14 @@
   <div class="article-content">
     {{ page.content | replace(from="<!-- toc -->", to=macros::toc(page=page)) | safe }}
   </div>
+  <hr>
+  <script src="https://utteranc.es/client.js"
+    repo="hayatroid/portfolio_comments"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
 </article>
 {% endif %}
 {% endblock content %}
