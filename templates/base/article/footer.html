@@ -1,0 +1,17 @@
+{% set notes = get_section(path="notes/_index.md") %}
+
+{% if page %}
+  {% set section = get_section(path=page.ancestors | last) %}
+  {% if section == notes %}
+  <hr>
+  <footer class="article-footer">
+      <script src="https://utteranc.es/client.js"
+        repo="hayatroid/portfolio_comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+  </footer>
+  {% endif %}
+{% endif %}
