@@ -4,7 +4,6 @@
 {% set page = get_page(path="404.md") %}
 <article class="container">
   {% include "base/article/header.html" %}
-  <hr>
   <div class="article-content">
     {{ page.content | safe }}
   </div>
