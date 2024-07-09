@@ -57,25 +57,8 @@
 
     .section-item {
       a {
-        color: var.$color-text-base;
-        border: 1px solid rgba(var.$color-text-base, 0.1);
-        border-radius: var.$border-radius-in-section-groups;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-        transition: 0.2s;
-        @media (hover: hover) {
-          &:hover {
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-          }
-          &:active {
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-          }
-        }
-        @media (hover: none) {
-          &:active {
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-          }
-        }
+        background-color: var.$color-bg-quote;
+        border: none;
 
         height: 15rem;
         padding: 1.5rem;
@@ -91,8 +74,7 @@
         }
 
         .title {
-          font-size: 2rem;
-          font-weight: bold;
+          font-size: 1.5rem;
         }
       }
     }
