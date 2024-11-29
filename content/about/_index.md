@@ -26,13 +26,18 @@ title_breadcrumb = "About"
   - 基本的なアルゴリズムが一通り書けます。
   - AtCoder の [Rating は {{ atc_rating() }}](https://atcoder.jp/users/hayatroid) です。
   - AtCoder の問題を今までに [Rust で {{ atc_cntrust() }} 問、Python で {{ atc_cntpy() }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
+  - [Rust 言語による競プロライブラリを育てています。](https://lib.hayatro.id/)
 - 🤏 Web フロントエンド
   - このサイトを作れる程度の能力があります（HTML / CSS）。
-  - [Vue.js でちょっとしたサイトを作ったことがあります。](https://trap.jp/post/2171/)
+  - [Vue.js で英単語のタイピングゲームを作ったことがあります。](https://trap.jp/post/2171/)
 - 🤏 Web バックエンド
   - [Go 言語で画像を加工して返すプログラムを書いたことがあります。](https://trap.jp/post/2104/)
 
+## Certifications
+- TOEIC L&R 880点 (2023)
+- 応用情報技術者試験 合格 (2024)
+
 ## Links
-- [Twitter](https://x.com/hayatroid)
+- [traP](https://trap.jp/author/hayatroid/)
 - [GitHub](https://github.com/hayatroid)
 - [AtCoder](https://atcoder.jp/users/hayatroid)
