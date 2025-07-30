@@ -18,7 +18,7 @@ title_breadcrumb = "About"
 ## Profile
 - 名前：hayatroid（はやとろいど）
 - 年齢：{{ age() }}
-- 所属：東京科学大学 情報理工学院 数理・計算科学系 学士 2 年
+- 所属：東京科学大学 情報理工学院 数理・計算科学系 学士 3 年
 - [東京科学大学デジタル創作同好会 traP](https://trap.jp/) のメンバーです。
 
 ## Skills
