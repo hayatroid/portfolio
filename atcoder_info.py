@@ -5,7 +5,7 @@ import requests
 user_name = 'hayatroid'
 
 # AtCoder レーティングの取得
-url = f'https://atcoder.jp/users/{user_name}/history/json'
+url = f'https://kenkoooo.com/atcoder/proxy/users/{user_name}/history/json'
 res = requests.get(url).json()
 rating = res[-1]['NewRating']
 
