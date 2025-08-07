@@ -1,7 +1,6 @@
 {% set about = get_section(path="about/_index.md") %}
-{% set licenses = get_page(path="licenses.md") %}
 
 <footer class="footer">
   <span>&copy; 2024 <a href="{{ about.permalink }}">{{ config.author }}</a></span>
-  <span><a href="{{ licenses.permalink }}">{{ licenses.title }}</a></span>
+  <span>made with <a href="https://www.getzola.org/">Zola</a></span>
 </footer>
