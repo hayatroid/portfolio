@@ -7,9 +7,8 @@ public_dir = root_dir / "public"
 ogp_dir = public_dir / "ogp"
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=True)
+    browser = playwright.chromium.launch()
     context = browser.new_context(
-        locale='ja-JP',
         viewport={'width': 600, 'height': 315},
         device_scale_factor=2
     )
@@ -23,9 +22,7 @@ with sync_playwright() as playwright:
         else:
             output_path = ogp_dir / f"{page_dir}.png"
 
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        page.goto(f"file://{html_path.absolute()}", wait_until="networkidle")
+        page.goto(f"file://{html_path}")
         page.add_style_tag(content="""
             @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP');
             @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji');
@@ -39,6 +36,6 @@ with sync_playwright() as playwright:
         """)
         page.wait_for_function("() => document.fonts.ready.then(() => true)")
         page.evaluate("window.scrollTo(0, 32)")
-        page.screenshot(path=str(output_path), type="png")
+        page.screenshot(path=output_path, type="png")
 
     browser.close()
