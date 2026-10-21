@@ -15,8 +15,8 @@
   .thumbnail {
     flex-shrink: 0;
 
-    font-size: var.$size-thumbnail-in-section-groups;
-    line-height: 1;
+    width: var.$size-thumbnail-in-section-groups;
+    height: var.$size-thumbnail-in-section-groups;
   }
 
   .info {
