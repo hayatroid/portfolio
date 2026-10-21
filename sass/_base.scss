@@ -260,6 +260,40 @@ body {
     & > :last-child {
       margin-bottom: 0;
     }
+
+    &.markdown-alert {
+      background: none;
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0.5rem 1rem;
+      color: inherit;
+      border-left: 0.25em solid #d1d9e0;
+
+      .markdown-alert-title {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 1rem;
+
+        svg {
+          margin-right: 0.5rem;
+          fill: currentColor;
+        }
+
+        & + * {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    &.markdown-alert-note {
+      border-left-color: #0969da;
+
+      .markdown-alert-title {
+        color: #0969da;
+      }
+    }
   }
 
   table {
