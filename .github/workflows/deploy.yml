@@ -1,5 +1,6 @@
 name: Update atcoder_info and deploy
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 15 * * *'
   push:
