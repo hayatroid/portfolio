@@ -294,6 +294,14 @@ body {
         color: #0969da;
       }
     }
+
+    &.markdown-alert-warning {
+      border-left-color: #9a6700;
+
+      .markdown-alert-title {
+        color: #9a6700;
+      }
+    }
   }
 
   table {
