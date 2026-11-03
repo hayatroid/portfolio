@@ -23,8 +23,8 @@ title_breadcrumb = "About"
 ## Skills
 - 💪 競技プログラミング
   - 基本的なアルゴリズムが一通り書けます。
-  - AtCoder の [Rating は {{ atc_rating() }}](https://atcoder.jp/users/hayatroid) です。
-  - AtCoder の問題を今までに [Rust で {{ atc_cntrust() }} 問、Python で {{ atc_cntpy() }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
+  - AtCoder の [Rating は {{ atcoder_rating() }}](https://atcoder.jp/users/hayatroid) です。
+  - AtCoder の問題を今までに [Rust で {{ atcoder_count(language="Rust") }} 問、Python で {{ atcoder_count(language="Python") }} 問](https://kenkoooo.com/atcoder/#/user/hayatroid?userPageTab=Languages) 解いています。
   - [Rust 言語による競プロライブラリを育てています。](https://lib.hayatro.id/)
 - 🤏 Web フロントエンド
   - このサイトを作れる程度の能力があります（HTML / CSS）。
