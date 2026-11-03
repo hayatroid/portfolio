@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "compatibility_date": "2026-11-03",
+  "assets": {
+    "directory": "public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "hayatro.id", "custom_domain": true }],
+  "preview_urls": true,
+  "previews": {}
+}
