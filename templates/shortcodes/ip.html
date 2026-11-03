@@ -1,0 +1,6 @@
+<p style="text-align: center; font-size: 1.5rem"><output id="ip"></output></p>
+
+<script type="module">
+  const res = await fetch("/api/ip");
+  document.getElementById("ip").value = await res.text();
+</script>
