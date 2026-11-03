@@ -2,6 +2,7 @@
   "name": "portfolio",
   "compatibility_date": "2026-11-03",
   "main": "api/index.ts",
+  "build": { "command": "bash ./build.sh" },
   "browser": { "binding": "BROWSER" },
   "kv_namespaces": [
     { "binding": "ATCODER", "id": "13e5a7aa155e4117a046e94b381148fe" },

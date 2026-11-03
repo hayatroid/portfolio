@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "build": "curl -sL https://github.com/getzola/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz | tar xz && ./zola build $(test \"$WORKERS_CI_BRANCH\" = main || echo --base-url /)"
-  },
   "devDependencies": {
     "wrangler": "^4.156.2"
   },
