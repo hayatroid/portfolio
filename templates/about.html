@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<article class="container">
+  <header class="card-author">
+    <img class="thumbnail" src="{{ get_url(path=config.extra.author_icon) }}" alt="{{ config.author }}">
+    <div class="info">
+      <h1 class="title">{{ config.author }}<span>（{{ config.extra.author_ja }}）</span></h1>
+      <p>{{ config.extra.author_bio }}</p>
+    </div>
+  </header>
+  <hr>
+  <div class="article-content">
+    {{ section.content | safe }}
+  </div>
+</article>
+{% endblock content %}

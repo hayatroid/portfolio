@@ -3,10 +3,9 @@ title = "自己紹介"
 description = "hayatroid の自己紹介"
 weight = 2
 
-template = "base/article/page.html"
+template = "about.html"
 
 [extra]
-emoji = "🧑‍💻"
 title_breadcrumb = "About"
 +++
 
