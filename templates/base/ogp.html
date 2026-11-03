@@ -2,7 +2,7 @@
 
 {% if section %}
   {% if section == home %}
-    {% set ogp_path = "ogp/home.png" %}
+    {% set ogp_path = "api/ogp/index.png" %}
     <title>{{ home.title }}</title>
     <meta name="description" content="{{ home.description }}">
 
@@ -18,8 +18,7 @@
     <meta name="twitter:description" content="{{ home.description }}">
     <meta name="twitter:image:src" content="{{ get_url(path=ogp_path) }}">
   {% else %}
-    {% set section_name = section.path | trim_start_matches(pat="/") | trim_end_matches(pat="/") %}
-    {% set ogp_path = "ogp/" ~ section_name ~ ".png" %}
+    {% set ogp_path = "api/ogp" ~ section.path ~ "index.png" %}
     <title>{{ section.title }} | {{ home.title }}</title>
     <meta name="description" content="{{ section.description }}">
 
@@ -39,8 +38,7 @@
   {% if not page %}
     {% set page = get_page(path="404.md") %}
   {% endif %}
-  {% set page_name = page.path | trim_start_matches(pat="/") | trim_end_matches(pat=".md") | trim_end_matches(pat="/") %}
-  {% set ogp_path = "ogp/" ~ page_name ~ ".png" %}
+  {% set ogp_path = "api/ogp" ~ page.path ~ "index.png" %}
   <title>{{ page.title }} | {{ home.title }}</title>
   <meta name="description" content="{{ page.description }}">
 
