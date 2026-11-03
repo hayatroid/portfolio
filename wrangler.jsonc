@@ -3,6 +3,10 @@
   "compatibility_date": "2026-11-03",
   "main": "api/index.ts",
   "browser": { "binding": "BROWSER" },
+  "kv_namespaces": [
+    { "binding": "ATCODER", "id": "13e5a7aa155e4117a046e94b381148fe" },
+  ],
+  "triggers": { "crons": ["0 15 * * *"] },
   "assets": {
     "directory": "public",
     "binding": "ASSETS",
@@ -11,5 +15,10 @@
   },
   "routes": [{ "pattern": "hayatro.id", "custom_domain": true }],
   "preview_urls": true,
-  "previews": { "browser": { "binding": "BROWSER" } },
+  "previews": {
+    "browser": { "binding": "BROWSER" },
+    "kv_namespaces": [
+      { "binding": "ATCODER", "id": "13e5a7aa155e4117a046e94b381148fe" },
+    ],
+  },
 }
