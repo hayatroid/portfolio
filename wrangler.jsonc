@@ -8,6 +8,10 @@
     { "binding": "ATCODER", "id": "13e5a7aa155e4117a046e94b381148fe" },
   ],
   "triggers": { "crons": ["0 15 * * *"] },
+  "containers": [{ "class_name": "Sandbox", "image": "./sandbox.Dockerfile", "instance_type": "standard-1" }],
+  "durable_objects": { "bindings": [{ "name": "SANDBOX", "class_name": "Sandbox" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Sandbox"] }],
+  "secrets": { "required": ["TURNSTILE_SECRET"] },
   "assets": {
     "directory": "public",
     "binding": "ASSETS",
@@ -21,5 +25,7 @@
     "kv_namespaces": [
       { "binding": "ATCODER", "id": "13e5a7aa155e4117a046e94b381148fe" },
     ],
+    "durable_objects": { "bindings": [{ "name": "SANDBOX", "class_name": "Sandbox" }] },
+    "containers": [{ "class_name": "Sandbox", "image": "./sandbox.Dockerfile", "instance_type": "standard-1" }],
   },
 }

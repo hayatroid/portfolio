@@ -1,0 +1,54 @@
+<form class="codetest" onsubmit="run(this); return false">
+  <label>
+    言語
+    <span class="select">
+      <select name="lang">
+        <option value="sh">Shell (BusyBox 1.37.0)</option>
+        <option value="python">Python 3.11.13 (PyPy 7.3.20)</option>
+      </select>
+      <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_down</span>
+    </span>
+  </label>
+
+  <label>
+    ソースコード
+    <textarea name="code"></textarea>
+  </label>
+
+  <label>
+    標準入力
+    <textarea name="stdin"></textarea>
+  </label>
+
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAF47lDPd88aqhet4"></div>
+  <input type="submit" value="実行" />
+
+  <label>
+    標準出力
+    <textarea id="stdout" readonly></textarea>
+  </label>
+
+  <label>
+    標準エラー出力
+    <textarea id="stderr" readonly></textarea>
+  </label>
+</form>
+
+{% include "cdn/turnstile.html" %}
+{% include "cdn/notyf.html" %}
+<script>
+  const notyf = new Notyf({ types: [{ type: 'running', background: 'gray', icon: { className: 'material-symbols-outlined', tagName: 'span', text: 'progress_activity', color: 'white' } }] });
+
+  const run = async (elm) => {
+    const running = notyf.open({ type: 'running', message: 'Running (up to 10s)', duration: 0 });
+    const res = await fetch('/api/run', { method: 'POST', body: new FormData(elm) });
+    turnstile.reset();
+    notyf.dismiss(running);
+    if (!res.ok) return notyf.error(await res.text());
+
+    const { status, stdout, stderr } = await res.json();
+    elm.stdout.value = stdout;
+    elm.stderr.value = stderr;
+    notyf.open({ type: status === 'Accepted' ? 'success' : 'error', message: status });
+  };
+</script>
