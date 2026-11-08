@@ -7,6 +7,7 @@ const OUTPUT_LIMIT = 64 * 2 ** 10; // 64 KiB
 
 export class Sandbox extends Container {
   defaultPort = 5050;
+  sleepAfter = "1m";
 
   async language(lang: string) {
     // A run just to look up how to run the language.
@@ -30,11 +31,6 @@ export class Sandbox extends Container {
   }
 
   async run(lang: string, code: string, stdin: string) {
-    // Wait up to 60s for a cold start (@cloudflare/containers default is 20s).
-    await this.startAndWaitForPorts({
-      cancellationOptions: { portReadyTimeoutMS: 60000 },
-    });
-
     const { source, run, env } = await this.language(lang);
     const res = await this.containerFetch("http://sandbox/run", {
       method: "POST",
