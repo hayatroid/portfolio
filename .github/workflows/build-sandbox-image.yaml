@@ -1,0 +1,19 @@
+name: Build Sandbox Image
+
+on:
+  push:
+    branches: [main]
+    paths: [sandbox/**]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-sandbox-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cachix/install-nix-action@v31
+      - run: nix build ./sandbox
+      - run: skopeo copy --dest-creds "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" docker-archive:result docker://ghcr.io/${{ github.repository }}/sandbox:latest
